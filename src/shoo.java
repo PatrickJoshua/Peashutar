@@ -4,6 +4,7 @@ import java.awt.Color;
 import java.awt.GradientPaint;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
+import java.awt.geom.QuadCurve2D;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -27,7 +28,7 @@ public class shoo extends javax.swing.JPanel {
     @Override
     public void paintComponent(Graphics g) {
         Graphics2D g2 = (Graphics2D)g;
-        g2.setStroke(new BasicStroke(8));
+        g2.setStroke(new BasicStroke(10));
         
         //oval head
         Color darkgreen = new Color(0,90,0);
@@ -43,24 +44,24 @@ public class shoo extends javax.swing.JPanel {
         
         //eyes back white
         g2.setColor(Color.white);
-        g2.rotate(Math.toRadians(-35));
+        g2.rotate(Math.toRadians(-35));     //-35º
         g2.fillOval(105, 258, 47, 63);
-        g2.fillOval(175, 293, 27, 43);
+        g2.fillOval(170, 288, 27, 43);
         
         //eyes black
         g2.setColor(Color.BLACK);
         g2.fillOval(105, 255, 47, 63);
-        g2.fillOval(175, 290, 27, 43);
+        g2.fillOval(170, 285, 27, 43);
         
         //eyes reflection white
         g2.setColor(Color.white);
-        g2.rotate(Math.toRadians(20));
+        g2.rotate(Math.toRadians(20));      //-15º
         g2.fillOval(200, 200, 22, 30);
-        g2.fillOval(273, 210, 12, 20);
+        g2.fillOval(265, 210, 12, 20);
         
         //mouth
         g2.setColor(darkgreen);
-        g2.rotate(Math.toRadians(30));
+        g2.rotate(Math.toRadians(30));      //15º
         g2.setStroke(new BasicStroke(7));
         g2.drawOval(395, 25, 122, 160);
         
@@ -68,7 +69,19 @@ public class shoo extends javax.swing.JPanel {
         g2.setColor(new Color(147,207,47));
         g2.fillOval(391, 28, 125, 155);
         
-        //
+        //back to normal rotation
+        //g2.rotate(Math.toRadians(-15));     //0º
+        
+        //white head glare inner curve outline
+        g2.setStroke(new BasicStroke(1));
+        g2.setColor(Color.white);
+        QuadCurve2D qc = new QuadCurve2D.Double(218, 140, 219, 64, 307, 23);
+        g2.draw(qc);
+        
+        //white head glare outer curve outline
+        qc = new QuadCurve2D.Double(194, 125, 207, 32, 307, 23);
+        g2.draw(qc);
+        g2.drawLine(218, 140, 194, 125);    //closing line
     }
 
     /**
