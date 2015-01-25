@@ -70,18 +70,19 @@ public class shoo extends javax.swing.JPanel {
         g2.fillOval(391, 28, 125, 155);
         
         //back to normal rotation
-        //g2.rotate(Math.toRadians(-15));     //0º
+        g2.rotate(Math.toRadians(-15));     //0º
+        //minus 60 for original coordinates
         
         //white head glare inner curve outline
         g2.setStroke(new BasicStroke(1));
         g2.setColor(Color.white);
-        QuadCurve2D qc = new QuadCurve2D.Double(218, 140, 219, 64, 307, 23);
+        QuadCurve2D qc = new QuadCurve2D.Double(171, 205, 178, 128, 263, 97);
         g2.draw(qc);
         
         //white head glare outer curve outline
-        qc = new QuadCurve2D.Double(194, 125, 207, 32, 307, 23);
+        qc = new QuadCurve2D.Double(149, 187, 172, 104, 263, 97);
         g2.draw(qc);
-        g2.drawLine(218, 140, 194, 125);    //closing line
+        g2.drawLine(172, 205, 149, 187);    //closing line
     }
 
     /**
