@@ -121,6 +121,14 @@ public class shoo extends javax.swing.JPanel {
         gp.closePath();
         g2.fill(gp);
         
+        //head shadow
+        g2.setColor(new Color(147,207,47));
+        gp = new GeneralPath(GeneralPath.WIND_EVEN_ODD);
+        gp.moveTo(152, 224);
+        gp.quadTo(210, 312, 348, 250);
+        gp.curveTo(302, 344, 168, 302, 152, 224);
+        gp.closePath();
+        g2.fill(gp);
     }
 
     /**
