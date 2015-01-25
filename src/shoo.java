@@ -112,6 +112,15 @@ public class shoo extends javax.swing.JPanel {
         qc = new QuadCurve2D.Double(149, 187, 172, 104, 263, 97);
         g2.draw(qc);
         g2.drawLine(172, 205, 149, 187);    //closing line
+        
+        //white head glare gp
+        gp = new GeneralPath(GeneralPath.WIND_EVEN_ODD);
+        gp.moveTo(171, 205);
+        gp.quadTo(178, 128, 263, 97);
+        gp.quadTo(172, 104, 149, 187);
+        gp.closePath();
+        g2.fill(gp);
+        
     }
 
     /**
