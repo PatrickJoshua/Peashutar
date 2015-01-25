@@ -35,10 +35,22 @@ public class shoo extends javax.swing.JPanel {
              RenderingHints.KEY_ANTIALIASING,
              RenderingHints.VALUE_ANTIALIAS_ON);
         g2.setRenderingHints(rh);
-        g2.setStroke(new BasicStroke(10));
+        GeneralPath gp;
+        Color darkgreen = new Color(0,90,0);
+        
+        //neck
+        g2.setColor(darkgreen);
+        g2.setStroke(new BasicStroke(8));
+        gp = new GeneralPath(GeneralPath.WIND_EVEN_ODD);
+        gp.moveTo(188, 290);
+        gp.curveTo(178, 326, 244, 352, 256, 312);
+        g2.draw(gp);
+        g2.setColor(new Color(51,102,0));
+        gp.closePath();
+        g2.fill(gp);
         
         //oval head
-        Color darkgreen = new Color(0,90,0);
+        g2.setStroke(new BasicStroke(10));
         g2.setColor(darkgreen);
         g2.drawOval(141, 90, 235, 219);
         g2.setColor(new Color(230,250,113));
@@ -95,7 +107,7 @@ public class shoo extends javax.swing.JPanel {
 //        g2.draw(cc);
 //        cc = new CubicCurve2D.Double(414, 183, 406, 187, 380, 219, 398, 257);
 //        g2.draw(cc);
-        GeneralPath gp = new GeneralPath(GeneralPath.WIND_EVEN_ODD);
+        gp = new GeneralPath(GeneralPath.WIND_EVEN_ODD);
         gp.moveTo(414, 183);
         gp.curveTo(454, 177, 442, 277, 398, 257);
         gp.curveTo(380, 219, 406, 187, 414, 183);
