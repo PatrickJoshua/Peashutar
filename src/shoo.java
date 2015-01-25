@@ -6,6 +6,7 @@ import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.RenderingHints;
 import java.awt.geom.CubicCurve2D;
+import java.awt.geom.GeneralPath;
 import java.awt.geom.QuadCurve2D;
 
 /*
@@ -90,10 +91,16 @@ public class shoo extends javax.swing.JPanel {
         //inner black mouth outline
         g2.setStroke(new BasicStroke(1));
         g2.setColor(Color.BLACK);
-        CubicCurve2D cc = new CubicCurve2D.Double(414, 183, 454, 177, 442, 277, 398, 257);
-        g2.draw(cc);
-        cc = new CubicCurve2D.Double(414, 183, 406, 187, 380, 219, 398, 257);
-        g2.draw(cc);
+//        CubicCurve2D cc = new CubicCurve2D.Double(414, 183, 454, 177, 442, 277, 398, 257);
+//        g2.draw(cc);
+//        cc = new CubicCurve2D.Double(414, 183, 406, 187, 380, 219, 398, 257);
+//        g2.draw(cc);
+        GeneralPath gp = new GeneralPath(GeneralPath.WIND_EVEN_ODD);
+        gp.moveTo(414, 183);
+        gp.curveTo(454, 177, 442, 277, 398, 257);
+        gp.curveTo(380, 219, 406, 187, 414, 183);
+        gp.closePath();
+        g2.fill(gp);
         
         //white head glare inner curve outline
         g2.setStroke(new BasicStroke(1));
