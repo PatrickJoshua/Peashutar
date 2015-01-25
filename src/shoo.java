@@ -88,11 +88,11 @@ public class shoo extends javax.swing.JPanel {
         //minus 60 for original coordinates
         
         //inner black mouth outline
-        g2.setStroke(new BasicStroke(2));
+        g2.setStroke(new BasicStroke(1));
         g2.setColor(Color.BLACK);
-        CubicCurve2D cc = new CubicCurve2D.Double(420, 183, 456, 177, 444, 277, 400, 257);
+        CubicCurve2D cc = new CubicCurve2D.Double(414, 183, 454, 177, 442, 277, 398, 257);
         g2.draw(cc);
-        cc = new CubicCurve2D.Double(420, 183, 408, 187, 382, 219, 400, 257);
+        cc = new CubicCurve2D.Double(414, 183, 406, 187, 380, 219, 398, 257);
         g2.draw(cc);
         
         //white head glare inner curve outline
