@@ -69,6 +69,10 @@ public class shoo extends javax.swing.JPanel {
         g2.setColor(new Color(147,207,47));
         g2.fillOval(391, 28, 125, 155);
         
+        //darkgreen mouth fill outline
+        g2.setColor(darkgreen);
+        g2.fillOval(430, 50, 65, 110);
+        
         //back to normal rotation
         g2.rotate(Math.toRadians(-15));     //0º
         //minus 60 for original coordinates
