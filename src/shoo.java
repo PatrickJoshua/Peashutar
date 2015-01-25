@@ -4,6 +4,8 @@ import java.awt.Color;
 import java.awt.GradientPaint;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
+import java.awt.RenderingHints;
+import java.awt.geom.CubicCurve2D;
 import java.awt.geom.QuadCurve2D;
 
 /*
@@ -28,6 +30,10 @@ public class shoo extends javax.swing.JPanel {
     @Override
     public void paintComponent(Graphics g) {
         Graphics2D g2 = (Graphics2D)g;
+        RenderingHints rh = new RenderingHints(
+             RenderingHints.KEY_ANTIALIASING,
+             RenderingHints.VALUE_ANTIALIAS_ON);
+        g2.setRenderingHints(rh);
         g2.setStroke(new BasicStroke(10));
         
         //oval head
@@ -63,7 +69,7 @@ public class shoo extends javax.swing.JPanel {
         g2.setColor(darkgreen);
         g2.rotate(Math.toRadians(30));      //15º
         g2.setStroke(new BasicStroke(7));
-        g2.drawOval(395, 25, 122, 160);
+        g2.drawOval(396, 25, 122, 160);
         
         //mouth fill
         g2.setColor(new Color(147,207,47));
@@ -80,6 +86,14 @@ public class shoo extends javax.swing.JPanel {
         //back to normal rotation
         g2.rotate(Math.toRadians(-15));     //0º
         //minus 60 for original coordinates
+        
+        //inner black mouth outline
+        g2.setStroke(new BasicStroke(2));
+        g2.setColor(Color.BLACK);
+        CubicCurve2D cc = new CubicCurve2D.Double(420, 183, 456, 177, 444, 277, 400, 257);
+        g2.draw(cc);
+        cc = new CubicCurve2D.Double(420, 183, 408, 187, 382, 219, 400, 257);
+        g2.draw(cc);
         
         //white head glare inner curve outline
         g2.setStroke(new BasicStroke(1));
