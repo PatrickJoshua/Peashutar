@@ -71,7 +71,11 @@ public class shoo extends javax.swing.JPanel {
         
         //darkgreen mouth fill outline
         g2.setColor(darkgreen);
-        g2.fillOval(430, 50, 65, 110);
+        g2.fillOval(430, 50, 72, 110);
+        
+        //lighter green mouth fill
+        g2.setColor(new Color(102,153,0));      //lighter middle green
+        g2.fillOval(437, 54, 68, 102);
         
         //back to normal rotation
         g2.rotate(Math.toRadians(-15));     //0º
