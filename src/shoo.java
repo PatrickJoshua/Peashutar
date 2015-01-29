@@ -36,10 +36,47 @@ public class shoo extends javax.swing.JPanel {
              RenderingHints.VALUE_ANTIALIAS_ON);
         g2.setRenderingHints(rh);
         GeneralPath gp;
-        Color darkgreen = new Color(0,90,0);
+        Color outline = new Color(0,90,0);
+        
+        //stem
+        g2.setColor(outline);
+        gp = new GeneralPath(GeneralPath.WIND_EVEN_ODD);
+        gp.moveTo(204, 322);
+        gp.quadTo(178, 384, 230, 456);
+        gp.lineTo(255, 452);
+        gp.quadTo(212, 394, 228, 332);
+        gp.closePath();
+        g2.setStroke(new BasicStroke(10));
+        g2.draw(gp);
+        GradientPaint darkstem = new GradientPaint(212,334,new Color(150,209,48),238,440,new Color(145,206,47));
+        g2.setPaint(darkstem);
+        g2.fill(gp);
+        
+        //stem gradient highlight
+        gp = new GeneralPath(GeneralPath.WIND_EVEN_ODD);
+        gp.moveTo(202,350);
+        gp.quadTo(195, 400, 233, 450);
+        gp.lineTo(238, 448);
+        gp.quadTo(200,398,208,352);
+        gp.closePath();
+        GradientPaint gpnt = new GradientPaint(200,338,new Color(234,254,117),240,450,new Color(184,231,68));
+        g2.setPaint(gpnt);
+        g2.fill(gp);
+        g2.draw(gp);
+        
+        //front leaf right
+        g2.setStroke(new BasicStroke(6));
+        gp = new GeneralPath(GeneralPath.WIND_EVEN_ODD);
+        gp.moveTo(236,455);
+        gp.curveTo(270, 404, 352, 414, 357, 465);
+        gp.curveTo(358, 494, 251, 509, 236,455);
+        g2.setPaint(new GradientPaint(304,426,new Color(169,229,60),304,464,new Color(102,204,0)));
+        g2.fill(gp);
+        g2.setColor(outline);
+        g2.draw(gp);
         
         //neck
-        g2.setColor(darkgreen);
+        g2.setColor(outline);
         g2.setStroke(new BasicStroke(8));
         gp = new GeneralPath(GeneralPath.WIND_EVEN_ODD);
         gp.moveTo(188, 290);
@@ -51,7 +88,7 @@ public class shoo extends javax.swing.JPanel {
         
         //oval head
         g2.setStroke(new BasicStroke(10));
-        g2.setColor(darkgreen);
+        g2.setColor(outline);
         g2.drawOval(141, 90, 235, 219);
         g2.setColor(new Color(230,250,113));
         //g2.fillOval(141, 90, 235, 219);
@@ -79,7 +116,7 @@ public class shoo extends javax.swing.JPanel {
         g2.fillOval(265, 210, 12, 20);
         
         //mouth
-        g2.setColor(darkgreen);
+        g2.setColor(outline);
         g2.rotate(Math.toRadians(30));      //15º
         g2.setStroke(new BasicStroke(7));
         g2.drawOval(396, 25, 122, 160);
@@ -89,7 +126,7 @@ public class shoo extends javax.swing.JPanel {
         g2.fillOval(391, 28, 125, 155);
         
         //darkgreen mouth fill outline
-        g2.setColor(darkgreen);
+        g2.setColor(outline);
         g2.fillOval(430, 50, 72, 110);
         
         //lighter green mouth fill
