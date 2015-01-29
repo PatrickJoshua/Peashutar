@@ -38,6 +38,44 @@ public class shoo extends javax.swing.JPanel {
         GeneralPath gp;
         Color outline = new Color(0,90,0);
         
+        //rear leaf right
+        gp = new GeneralPath(GeneralPath.WIND_EVEN_ODD);
+        gp.moveTo(232,405);
+        gp.curveTo(239, 388, 269, 379, 289, 399);
+        gp.curveTo(304, 464, 205, 462, 232, 405);
+        g2.setPaint(new GradientPaint(236,406,new Color(111,149,38),285,400,new Color(66,132,0)));
+        g2.fill(gp);
+        g2.setColor(outline);
+        g2.setStroke(new BasicStroke(4));
+        g2.draw(gp);
+        
+        //rear leaf right crease
+        gp = new GeneralPath(GeneralPath.WIND_EVEN_ODD);
+        gp.moveTo(234,415);
+        gp.quadTo(247, 404, 255, 404);
+        gp.quadTo(240, 411, 237, 422);
+        g2.setColor(outline);
+        g2.fill(gp);
+        
+        //rear leaf left
+        gp = new GeneralPath(GeneralPath.WIND_EVEN_ODD);
+        gp.moveTo(204,405);
+        gp.curveTo(204, 405, 160, 366, 132, 402);
+        gp.curveTo(128, 450, 220, 442, 220, 442);
+        g2.setPaint(new GradientPaint(208,428,new Color(98,145,26),135,403,new Color(66,132,0)));
+        g2.fill(gp);
+        g2.setColor(outline);
+        g2.setStroke(new BasicStroke(4));
+        g2.draw(gp);
+        
+        //rear leaf left crease
+        gp = new GeneralPath(GeneralPath.WIND_EVEN_ODD);
+        gp.moveTo(208,420);
+        gp.quadTo(199, 403, 174, 405);
+        gp.quadTo(204, 411, 212, 430);
+        g2.setColor(outline);
+        g2.fill(gp);
+        
         //stem
         g2.setColor(outline);
         gp = new GeneralPath(GeneralPath.WIND_EVEN_ODD);
