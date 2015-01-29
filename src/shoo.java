@@ -64,16 +64,62 @@ public class shoo extends javax.swing.JPanel {
         g2.fill(gp);
         g2.draw(gp);
         
-        //front leaf right
-        g2.setStroke(new BasicStroke(6));
+        //front leaf base
+        g2.setStroke(new BasicStroke(5));
         gp = new GeneralPath(GeneralPath.WIND_EVEN_ODD);
         gp.moveTo(236,455);
         gp.curveTo(270, 404, 352, 414, 357, 465);
         gp.curveTo(358, 494, 251, 509, 236,455);
-        g2.setPaint(new GradientPaint(304,426,new Color(169,229,60),304,464,new Color(102,204,0)));
+        //g2.setPaint(new GradientPaint(304,426,new Color(169,229,60),304,464,new Color(102,204,0)));
+        Color leafbase = new Color(53,157,0);
+        g2.setColor(leafbase);
         g2.fill(gp);
         g2.setColor(outline);
         g2.draw(gp);
+        
+        //front leaf right highlight
+        gp = new GeneralPath(GeneralPath.WIND_EVEN_ODD);
+        gp.moveTo(245,455);
+        gp.curveTo(275, 415, 352, 419, 357, 465);
+        gp.curveTo(358, 494, 255, 500, 245,455);
+        g2.setPaint(new GradientPaint(304,426,new Color(169,229,60),304,464,new Color(102,204,0)));
+        g2.fill(gp);
+        
+        //front right leaf crease
+        gp = new GeneralPath(GeneralPath.WIND_EVEN_ODD);
+        gp.moveTo(258,433);
+        gp.quadTo(298, 424, 319, 442);
+        gp.quadTo(290, 426, 247, 443);
+        //gp.closePath();
+        g2.setColor(outline);
+        g2.fill(gp);
+        
+        //front leaf left base
+        gp = new GeneralPath(GeneralPath.WIND_EVEN_ODD);
+        gp.moveTo(229, 458);
+        gp.curveTo(207, 410, 130, 395, 118, 472);
+        gp.curveTo(119, 503, 212, 528, 229, 458);
+        //g2.setPaint(new GradientPaint(164,424,new Color(169,229,60),164,466,new Color(102,204,0)));
+        g2.setColor(leafbase);
+        g2.fill(gp);
+        g2.setColor(outline);
+        g2.draw(gp);
+        
+        //front leaf left highlight
+        gp = new GeneralPath(GeneralPath.WIND_EVEN_ODD);
+        gp.moveTo(220, 458);
+        gp.curveTo(204, 426, 135, 395, 122, 472);
+        gp.curveTo(122, 503, 210, 518, 220, 458);
+        g2.setPaint(new GradientPaint(164,424,new Color(169,229,60),164,466,new Color(102,204,0)));
+        g2.fill(gp);
+        
+        //front left leaf crease
+        gp = new GeneralPath(GeneralPath.WIND_EVEN_ODD);
+        gp.moveTo(204,431);
+        gp.quadTo(175, 422, 154, 444);
+        gp.quadTo(183, 425, 218, 441);
+        g2.setColor(outline);
+        g2.fill(gp);
         
         //neck
         g2.setColor(outline);
