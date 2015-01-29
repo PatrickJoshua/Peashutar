@@ -169,6 +169,48 @@ public class shoo extends javax.swing.JPanel {
         g2.setColor(new Color(51,102,0));
         gp.closePath();
         g2.fill(gp);
+
+        //hair stem dark
+        gp = new GeneralPath(GeneralPath.WIND_EVEN_ODD);
+        gp.moveTo(122,104);
+        gp.curveTo(92, 93, 50, 152, 92, 205);
+        gp.quadTo(94, 168, 126, 155);
+        gp.lineTo(125, 140);
+        gp.lineTo(132, 148);
+        gp.lineTo(140, 143);
+        gp.lineTo(134, 136);
+        gp.lineTo(144, 135);
+        gp.quadTo(150, 110, 122, 104);
+        g2.setColor(new Color(51,102,0));
+        g2.fill(gp);
+        g2.setStroke(new BasicStroke(5));
+        g2.setColor(outline);
+        g2.draw(gp);
+        
+        //hair leaf light
+        g2.setStroke(new BasicStroke(5));
+        gp = new GeneralPath(GeneralPath.WIND_EVEN_ODD);
+        gp.moveTo(122,104);
+        gp.curveTo(103, 94, 51, 136, 90, 200);
+        gp.quadTo(87, 164, 97, 155);
+        gp.quadTo(89, 136, 95, 128);
+        gp.quadTo(96, 142, 101, 143);
+        gp.quadTo(118, 105, 143, 118);
+        g2.setPaint(new GradientPaint(126,112,new Color(164,227,54),81,149,new Color(102,204,0)));
+        g2.fill(gp);
+        g2.setColor(outline);
+        g2.draw(gp);
+        
+        //hair stem
+        gp = new GeneralPath(GeneralPath.WIND_EVEN_ODD);
+        gp.moveTo(168,130);
+        gp.quadTo(147, 93, 106, 105);
+        gp.quadTo(133, 98, 161, 138);
+        g2.setColor(new Color(163,234,49));
+        g2.fill(gp);
+        g2.setStroke(new BasicStroke(5));
+        g2.setColor(outline);
+        g2.draw(gp);
         
         //oval head
         g2.setStroke(new BasicStroke(10));
