@@ -247,9 +247,14 @@ public class shoo extends javax.swing.JPanel {
         g2.setStroke(new BasicStroke(7));
         g2.drawOval(396, 25, 122, 160);
         
+        //mouth fill gradient
+        //g2.setColor(new Color(147,207,47));
+        g2.setPaint(new GradientPaint(400,140,(new Color(147,207,47)),400,28,(new Color(230,253,106))));
+        g2.fillOval(392, 28, 125, 155);
+        
         //mouth fill
         g2.setColor(new Color(147,207,47));
-        g2.fillOval(391, 28, 125, 155);
+        g2.fillOval(416, 38, 100, 140);
         
         //darkgreen mouth fill outline
         g2.setColor(outline);
@@ -263,13 +268,26 @@ public class shoo extends javax.swing.JPanel {
         g2.rotate(Math.toRadians(-15));     //0º
         //minus 60 for original coordinates
         
+        //white mouth glare
+        gp = new GeneralPath(GeneralPath.WIND_EVEN_ODD);
+        gp.moveTo(382, 170);
+        gp.quadTo(400, 140, 431, 147);
+        gp.curveTo(448, 150, 458, 162, 458, 162);
+        gp.quadTo(432, 136, 382, 170);
+        g2.setColor(Color.WHITE);
+        g2.fill(gp);
+        
+        //semi-white mouth glare bottom
+        gp = new GeneralPath(GeneralPath.WIND_EVEN_ODD);
+        gp.moveTo(411, 279);
+        gp.quadTo(435, 285, 454, 258);
+        gp.quadTo(446, 290, 411, 279);
+        g2.setColor(new Color(216,248,103));
+        g2.fill(gp);
+        
         //inner black mouth outline
         g2.setStroke(new BasicStroke(1));
         g2.setColor(Color.BLACK);
-//        CubicCurve2D cc = new CubicCurve2D.Double(414, 183, 454, 177, 442, 277, 398, 257);
-//        g2.draw(cc);
-//        cc = new CubicCurve2D.Double(414, 183, 406, 187, 380, 219, 398, 257);
-//        g2.draw(cc);
         gp = new GeneralPath(GeneralPath.WIND_EVEN_ODD);
         gp.moveTo(414, 183);
         gp.curveTo(454, 177, 442, 277, 398, 257);
