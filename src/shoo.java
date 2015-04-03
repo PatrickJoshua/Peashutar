@@ -8,6 +8,8 @@ import java.awt.RenderingHints;
 import java.awt.geom.CubicCurve2D;
 import java.awt.geom.GeneralPath;
 import java.awt.geom.QuadCurve2D;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -29,7 +31,7 @@ public class shoo extends javax.swing.JPanel {
     }
     
     @Override
-    public void paintComponent(Graphics g) {
+    public void paint(Graphics g) {
         Graphics2D g2 = (Graphics2D)g;
         RenderingHints rh = new RenderingHints(
              RenderingHints.KEY_ANTIALIASING,
@@ -322,6 +324,28 @@ public class shoo extends javax.swing.JPanel {
         gp.curveTo(302, 344, 168, 302, 152, 224);
         gp.closePath();
         g2.fill(gp);
+        
+        //pea animation
+        int peaX = 570, peaY = 112;
+        
+        //pea gradient fill
+        g2.setPaint(new GradientPaint(570,112,new Color(225,235,131),195,150,new Color(138,181,31)));
+        g2.fillOval(570, 112, 195, 150);
+        
+        //pea outline
+        g2.setStroke(new BasicStroke(5));
+        g2.setColor(outline);
+        g2.drawOval(peaX, peaY, 195, 150);
+        
+        for(;peaX<700;peaX++) {
+            g2.drawOval(peaX, peaY, 195, 150);
+            try {
+                Thread.sleep(20L);
+            } catch (InterruptedException ex) {
+                Logger.getLogger(shoo.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        
     }
 
     /**
